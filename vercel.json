@@ -1,15 +1,5 @@
 {
   "version": 2,
-  "name": "schedule-integrity-pro",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
-    }
-  ],
   "headers": [
     {
       "source": "/assets/(.*)",
@@ -28,4 +18,5 @@
     }
   ]
 }
+
 
