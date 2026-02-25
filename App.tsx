@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Card, CardContent } from '@/components/ui/card';
-import { useScheduleAnalysis } from '@/hooks/useScheduleAnalysis';
-import { FileUploader } from '@/components/FileUploader';
-import { CriteriaConfig } from '@/components/CriteriaConfig';
-import { AnalysisDashboard } from '@/components/AnalysisDashboard';
-import { sampleScheduleData } from '@/data/defaultConfig';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from './tabs'; // Ajustado
+import { Button } from './button'; // Ajustado
+import { Badge } from './badge'; // Ajustado
+import { Card, CardContent } from './card'; // Ajustado
+import { useScheduleAnalysis } from './useScheduleAnalysis'; // Ajustado
+import { FileUploader } from './FileUploader'; // Ajustado
+import { CriteriaConfig } from './CriteriaConfig'; // Ajustado
+import { AnalysisDashboard } from './AnalysisDashboard'; // Ajustado
+import { sampleScheduleData } from './defaultConfig'; // Ajustado
 import {
   Play,
   Settings,
@@ -288,3 +288,4 @@ function App() {
 }
 
 export default App;
+
