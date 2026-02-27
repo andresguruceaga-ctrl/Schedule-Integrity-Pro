@@ -1,9 +1,9 @@
 import { useState, useCallback } from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
+import { Card, CardContent } from './card'; // Ajustado
+import { Button } from './button'; // Ajustado
+import { Badge } from './badge'; // Ajustado
 import { Upload, FileText, X, Database } from 'lucide-react';
-import type { ScheduleData, Activity, Relationship, Calendar } from '@/types';
+import type { ScheduleData, Activity, Relationship, Calendar } from './types'; // Ajustado (asumiendo types.ts en la raíz)
 
 interface FileUploaderProps {
   onFileLoad: (data: ScheduleData) => void;
@@ -26,7 +26,6 @@ export function FileUploader({ onFileLoad, onLoadDemo }: FileUploaderProps) {
   }, []);
 
   const parseXERContent = (content: string): ScheduleData => {
-    // Parser simplificado para archivos XER de Primavera P6
     const lines = content.split('\n');
     const activities: Activity[] = [];
     const relationships: Relationship[] = [];
@@ -91,7 +90,6 @@ export function FileUploader({ onFileLoad, onLoadDemo }: FileUploaderProps) {
   };
 
   const parseXMLContent = (content: string): ScheduleData => {
-    // Parser simplificado para archivos XML de MS Project
     const parser = new DOMParser();
     const xmlDoc = parser.parseFromString(content, 'text/xml');
     
@@ -99,7 +97,6 @@ export function FileUploader({ onFileLoad, onLoadDemo }: FileUploaderProps) {
     const relationships: Relationship[] = [];
     const calendars: Calendar[] = [];
 
-    // Parsear tareas
     const tasks = xmlDoc.getElementsByTagName('Task');
     for (let i = 0; i < tasks.length; i++) {
       const task = tasks[i];
@@ -111,7 +108,6 @@ export function FileUploader({ onFileLoad, onLoadDemo }: FileUploaderProps) {
       const percentComplete = task.getElementsByTagName('PercentComplete')[0]?.textContent || '0';
       const critical = task.getElementsByTagName('Critical')[0]?.textContent === '1';
       
-      // Parsear duración (formato PT8H0M0S)
       const durationMatch = duration.match(/PT(\d+)H/);
       const durationHours = durationMatch ? parseInt(durationMatch[1]) : 0;
       const durationDays = durationHours / 8;
@@ -130,7 +126,6 @@ export function FileUploader({ onFileLoad, onLoadDemo }: FileUploaderProps) {
       });
     }
 
-    // Parsear predecesoras
     const predecessorLinks = xmlDoc.getElementsByTagName('PredecessorLink');
     for (let i = 0; i < predecessorLinks.length; i++) {
       const pred = predecessorLinks[i];
