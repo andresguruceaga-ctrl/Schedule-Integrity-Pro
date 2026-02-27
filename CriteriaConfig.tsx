@@ -1,15 +1,15 @@
 import { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Switch } from '@/components/ui/switch';
-import { Slider } from '@/components/ui/slider';
-import { Badge } from '@/components/ui/badge';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import type { CategoryConfig, CriterionConfig, UserConfig } from '@/types';
+import { Card, CardContent, CardHeader, CardTitle } from './card'; // Ajustado
+import { Button } from './button'; // Ajustado
+import { Input } from './input'; // Ajustado
+import { Label } from './label'; // Ajustado
+import { Switch } from './switch'; // Ajustado
+import { Slider } from './slider'; // Ajustado
+import { Badge } from './badge'; // Ajustado
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './accordion'; // Ajustado
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from './dialog'; // Ajustado
+import { Tabs, TabsContent, TabsList, TabsTrigger } from './tabs'; // Ajustado
+import type { CategoryConfig, CriterionConfig, UserConfig } from './types'; // Ajustado (asumiendo que types.ts está en la raíz)
 import { Settings, Download, Upload, RotateCcw, ChevronDown } from 'lucide-react';
 
 interface CriteriaConfigProps {
