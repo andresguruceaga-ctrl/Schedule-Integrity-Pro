@@ -1,8 +1,9 @@
 import * as React from "react"
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
 
-import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
+// Cambiado: ahora busca utils y button en la misma carpeta (raíz)
+import { cn } from "./utils"
+import { buttonVariants } from "./button"
 
 function AlertDialog({
   ...props
